@@ -29,6 +29,9 @@ namespace ORMConfiguraitons
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<April2018MVCContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("OurCS")));
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
